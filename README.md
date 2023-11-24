@@ -1,3 +1,15 @@
-# ParentChildWindows
+ParentChildWindows: Interprocess Communication & Graphics with X11 Library
 
-This code is written in C and uses the X11 library to create a window with a rotating square. It also demonstrates interprocess communication using shared memory. The program can be run in two modes: parent and child. If run as a child process, it reads a shared memory ID from argv[2] sent from the parent process. It then creates a new window and starts a thread that will control the rendering of the rotating square. If run as a parent process, it creates a shared memory ID and attaches to it, then initializes the window and starts the main loop. The program uses Xlib to handle events, such as key presses and mouse clicks, to control the square. It also uses pthreads to handle the rendering of the square in the child process. The square can be filled with a color by clicking inside it and can be closed by right-clicking inside it.
+ParentChildWindows is a C program utilizing the X11 library to create an interactive window featuring a rotating square. This project showcases interprocess communication through shared memory, demonstrating the parent-child relationship between processes.
+
+Key Features:
+
+	•	Dual Process Execution: Operates in two modes—parent and child processes—to exhibit interprocess communication functionalities.
+	•	Shared Memory Utilization: Utilizes shared memory via the X11 library, passing information between parent and child processes.
+	•	Window Creation and Control: Creates and manages windows, handling rendering and event-driven interactions using Xlib.
+	•	Thread Management: Implements pthreads to manage the rendering of the rotating square in the child process.
+	•	User Interaction: Supports user actions, enabling square color fill upon click and closure upon right-click within the square.
+
+Functionality Overview:
+
+The program, when executed as a child process, receives a shared memory ID from the parent process via argv[2], creates a new window, and initiates a thread responsible for the continuous rendering of the rotating square. When executed as a parent process, it initializes the shared memory ID, establishes the window, and initiates the primary event loop.
